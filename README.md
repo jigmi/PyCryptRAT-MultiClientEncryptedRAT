@@ -1,8 +1,7 @@
 
-
-# The RAT MASTER BY JIG
-The Multiple Client Remote Access Tool was created in order to target the windows operating system and perform reconnaissance with its main purpose of serving as a staging ground for further payloads
-and the extraction of notable files which are essential in information gathering.  
+# Objective
+The Multiple Client Remote Access Tool was created in order to target the windows operating system and perform reconnaissance with its main purpose of serving as a staging ground for further payloads and the extraction of notable files which are essential in information gathering.  
+![image](https://user-images.githubusercontent.com/87882680/127767830-f063f761-977e-439d-a67e-29d5194ea5e2.png)
 # Features 
 - Access to the target's terminal and thus, the execution of an array of shell commands, most notably displaying directories and files, opening files such as further payloads, altering file structure, displaying network configurations and connections.
 - Send any file to the target machine which allows for further tools and paylods to be present on the victim's machine to be executed. 
