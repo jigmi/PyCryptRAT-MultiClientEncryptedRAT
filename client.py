@@ -20,7 +20,7 @@ def wow():
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     while True:
         try:
-            s.connect(("0.tcp.ngrok.io",13973)) #port on server and client have to be same
+            s.connect(("",)) #port on server and client have to be same
             break      
         except:
             pass
