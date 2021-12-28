@@ -4,10 +4,7 @@
 
 # Secure Penetration Testing
  [![jigmi - PyCryptRAT-MultiClientEncryptedRAT](https://img.shields.io/static/v1?label=jigmi&message=PyCryptRAT-MultiClientEncryptedRAT&color=black&logo=github)](https://github.com/jigmi/PyCryptRAT-MultiClientEncryptedRAT "Go to GitHub repo")
-[![stars - PyCryptRAT-MultiClientEncryptedRAT](https://img.shields.io/github/stars/jigmi/PyCryptRAT-MultiClientEncryptedRAT?style=social)](https://github.com/jigmi/PyCryptRAT-MultiClientEncryptedRAT)
-[![forks - PyCryptRAT-MultiClientEncryptedRAT](https://img.shields.io/github/forks/jigmi/PyCryptRAT-MultiClientEncryptedRAT?style=social)](https://github.com/jigmi/PyCryptRAT-MultiClientEncryptedRAT)
-   
-<img alt="GitHub" src="https://img.shields.io/github/license/jigmi/PyCryptRAT-MultiClientEncryptedRAT?color=black&style=plastic">
+[![stars - PyCryptRAT-MultiClientEncryptedRAT](https://img.shields.io/github/stars/jigmi/PyCryptRAT-MultiClientEncryptedRAT?style=social)](https://github.com/jigmi/PyCryptRAT-MultiClientEncryptedRAT)   [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
 
 The Multiple Client Remote Access Tool was created in order to target the linux and windows operating system and perform reconnaissance with its main purpose of serving as a staging ground for further payloads and the extraction of notable files which are essential in information gathering. The **Diffie Hellman** key exchanged is performed between the server and the client in order to securely transfer keys, where then commands and data from files are encrypted with **AES 256 bit symmetric encryption** in order to protect sensitive data. 
 
