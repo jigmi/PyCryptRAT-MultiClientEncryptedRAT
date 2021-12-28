@@ -4,11 +4,11 @@
 
 # Secure Penetration Testing
    
-![image](https://img.shields.io/github/license/jigmi/PyCryptRAT-MultiClientEncryptedRAT?color=black)
+![GitHub](https://img.shields.io/github/license/jigmi/PyCryptRAT-MultiClientEncryptedRAT?color=black)
 
 The Multiple Client Remote Access Tool was created in order to target the linux and windows operating system and perform reconnaissance with its main purpose of serving as a staging ground for further payloads and the extraction of notable files which are essential in information gathering. The **Diffie Hellman** key exchanged is performed between the server and the client in order to securely transfer keys, where then commands and data from files are encrypted with **AES 256 bit symmetric encryption** in order to protect sensitive data. 
 
-![image](https://user-images.githubusercontent.com/87882680/127826958-e6fe0b07-2ea1-4244-980b-30dbde22b486.png)
+
 
  __Features__
 - **Diffie Hellman key exchange and the AES 256 bit encryption of all data and commands sent between the server and client** This includes the encryption of file data along with the decryption of it, all commands are also encrypted to prevent MITM attacks.
