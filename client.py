@@ -26,7 +26,7 @@ def socket_creation():
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     while True:
         try:
-            s.connect((socket.gethostbyname(socket.gethostname()),6666)) #port on server and client have to be same
+            s.connect((socket.gethostbyname(socket.gethostname()),6666)) #set this to the server.py
             break      
         except:
             pass
