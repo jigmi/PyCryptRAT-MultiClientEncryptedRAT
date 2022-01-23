@@ -42,6 +42,12 @@ __Usage__
 
 The server.py can be hosted on your machine however, I have tested this on servers provideed by external providers and have thus far, encounted no errors and bugs that hinder the operational capabilities of the RAT. Most importantly, client.py will always try to establish connection with the server without prompting errors that delay successive commands, enabling the hosting servers to be turned off when not in use which can decrease operational costs.
 
+__Dependancies__
+
+Pycryptodomex
+```
+pip install pycryptodomex
+```
 __Disclaimer__
 
 This project should only be used for authorised testing or educational purposes only.
